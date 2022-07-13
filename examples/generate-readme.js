@@ -26,6 +26,17 @@ const config = {
     INLINE_EXAMPLE: () => {
       return '**⊂◉‿◉つ**'
     },
+    PROTOCOL_NAME: () => {
+      return 'Cronus'
+    },
+    DATE: () => {
+      return 'June 15, 2022'
+    },
+    /* Match <!-- AUTO-GENERATED-CONTENT:START (FINDINGS:type=HIGH&folder=./high) --> */
+    FINGDINGS(content, options) {
+      return `todo ${options.type} ${options.folder}`
+    },
+
     /* Match <!-- AUTO-GENERATED-CONTENT:START (pluginExample) --> */
     pluginExample: require('./plugin-example')({ addNewLine: true }),
     /* Include plugins from NPM */

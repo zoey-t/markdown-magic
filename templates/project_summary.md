@@ -1,0 +1,6 @@
+Cronus Finance is an AMM DEX deployed on the EVMOS ecosystem. A portion of Cronus Finance’s code is based on SushiSwap, which features liquidity mining rewards and governance token staking. It is worth noting that Cronus Finance also implemented new features such as a Stable Cronus Staking that converts LP fees into stablecoins and allows $sCRN holders to claim exchange fees denominated in stablecoins.
+
+
+1. **AMM DEX**
+   
+    The AMM DEX part of Cronus Finance is based on SushiSwap, which is based on the Uniswap V2. Users can add/remove liquidity and swap assets by interacting with the `CronusRouter02.sol` contract. For adding liquidity, `CronusRouter02.sol` will first check whether the pair exists. If the pair does not exist, A `CronusPair.sol` will be deployed by `CronusFactory.sol`. If the pair exists, `CronusRouter02.sol` will query the reserve of `tokenA` and `tokenB` of the pair by calling `CronusLibrary` contract. `CronusRouter02.sol` will then check whether the user is depositing the minimal amount of `tokenA` and `tokenB` to the pair. If the check passes, then `CronusRouter02.sol` will the `tokenA` and `tokenB` that the user is depositing to the `CronusPair.sol` contract of the pair. The `CronusPair.sol` contract of the pair will then mint LP tokens to the user, representing the liquidity provided by the user. 
